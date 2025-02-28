@@ -1,0 +1,99 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "login": "admin",
+      "password": "admin123",
+      "isAdmin": true,
+      "email": "admin@example.com",
+      "fullName": "Admin User",
+      "createdAt": "2023-01-01T00:00:00.000Z",
+      "lastLogin": "2023-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "2",
+      "login": "user",
+      "password": "user123",
+      "isAdmin": false,
+      "email": "user@example.com",
+      "fullName": "Regular User",
+      "createdAt": "2023-01-01T00:00:00.000Z",
+      "lastLogin": "2023-01-01T00:00:00.000Z"
+    }
+  ],
+  "documents": [
+    {
+      "id": "1",
+      "title": "Важный документ",
+      "url": "https://docs.google.com/document/d/1234567890/edit",
+      "createdAt": "2023-01-01T00:00:00.000Z",
+      "updatedAt": "2023-01-15T00:00:00.000Z",
+      "history": [
+        {
+          "changedBy": "1",
+          "changedAt": "2023-01-15T00:00:00.000Z",
+          "changes": "Updated content"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Отчет за квартал",
+      "url": "https://docs.google.com/document/d/0987654321/edit",
+      "createdAt": "2023-02-01T00:00:00.000Z",
+      "updatedAt": "2023-02-28T00:00:00.000Z",
+      "history": [
+        {
+          "changedBy": "2",
+          "changedAt": "2023-02-28T00:00:00.000Z",
+          "changes": "Added financial data"
+        }
+      ]
+    }
+  ],
+  "bonuses": [
+    {
+      "id": "1",
+      "name": "Welcome Bonus",
+      "description": "New user bonus",
+      "amount": 100,
+      "isUsed": false
+    },
+    {
+      "id": "2",
+      "name": "Referral Bonus",
+      "description": "Bonus for referring a friend",
+      "amount": 50,
+      "isUsed": false
+    }
+  ],
+  "affiliates": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "code": "JOHN2023",
+      "commission": 10
+    },
+    {
+      "id": "2",
+      "name": "Jane Smith",
+      "code": "JANE2023",
+      "commission": 15
+    }
+  ],
+  "reports": [
+    {
+      "id": "1",
+      "title": "Monthly Report",
+      "url": "https://example.com/report1",
+      "date": "2023-05-01"
+    },
+    {
+      "id": "2",
+      "title": "Quarterly Report",
+      "url": "https://example.com/report2",
+      "date": "2023-06-30"
+    }
+  ]
+}
+
