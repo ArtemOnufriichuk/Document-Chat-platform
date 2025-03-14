@@ -2,9 +2,7 @@ import type React from 'react';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
-import { ThemeProvider } from '@/components/theme-provider';
-// import { Toaster } from '@/components/ui/toaster';
-import './globals.css';
+import ThemeProvider from '@/components/ThemeProvider';
 
 const inter = Inter({ subsets: ['latin', 'cyrillic'] });
 
@@ -24,10 +22,7 @@ export default function RootLayout({
 				<link rel='preload' href='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js' as='script' />
 			</head>
 			<body className={inter.className}>
-				<ThemeProvider defaultTheme='dark'>
-					{children}
-					{/* <Toaster /> */}
-				</ThemeProvider>
+				<ThemeProvider defaultTheme='dark'>{children}</ThemeProvider>
 			</body>
 		</html>
 	);

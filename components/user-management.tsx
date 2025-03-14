@@ -12,7 +12,6 @@ import { Switch } from '@/components/ui/switch';
 import { Loader2, AlertCircle } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { Alert, AlertDescription } from '@/components/ui/alert';
-import { PageContainer } from './layout/page-container';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from '@/components/ui/dialog';
 
 export default function UserManagement() {
@@ -117,18 +116,16 @@ export default function UserManagement() {
 	// Check if user has admin permissions
 	if (!currentUser?.isAdmin) {
 		return (
-			<PageContainer>
-				<Card>
-					<CardContent className='p-6'>
-						<p className='text-center text-muted-foreground'>У вас нет доступа к управлению пользователями</p>
-					</CardContent>
-				</Card>
-			</PageContainer>
+			<Card>
+				<CardContent className='p-6'>
+					<p className='text-center text-muted-foreground'>У вас нет доступа к управлению пользователями</p>
+				</CardContent>
+			</Card>
 		);
 	}
 
 	return (
-		<PageContainer>
+		<>
 			<div className='space-y-6'>
 				<Card>
 					<CardHeader>
@@ -290,6 +287,6 @@ export default function UserManagement() {
 					</DialogFooter>
 				</DialogContent>
 			</Dialog>
-		</PageContainer>
+		</>
 	);
 }

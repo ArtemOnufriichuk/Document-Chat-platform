@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAppStore } from '@/lib/store';
 import { LogOut, User as UserIcon, Loader2, FileText } from 'lucide-react';
