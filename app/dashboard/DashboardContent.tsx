@@ -8,9 +8,9 @@ import LoadingSpinner from '@/components/Loading';
 // Lazy load components for better performance
 const DocumentList = lazy(() => import('@/components/DocumentList'));
 const AddDocumentForm = lazy(() => import('@/components/AddDocumentForm'));
-const Chat = lazy(() => import('@/components/Сhat'));
+const Chat = lazy(() => import('@/components/Chat2'));
 const UserManagement = lazy(() => import('@/components/UserManagement'));
-const Settings = lazy(() => import('@/components/Settings'));
+const Settings = lazy(() => import('@/components/settings'));
 
 const DashboardContent = () => {
 	const searchParams = useSearchParams();
@@ -46,7 +46,7 @@ const DashboardContent = () => {
 			case 'documents':
 				return 'документов';
 			case 'chat':
-				return 'чата';
+				return 'чата с документом';
 			case 'users':
 				return 'пользователей';
 			case 'settings':

@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
-import { FileText, MessageSquare, Users, Settings } from 'lucide-react';
+import { FileText, MessageCircle, Users, Settings } from 'lucide-react';
 import { useAppStore } from '@/lib/store';
 import { cn } from '@/utils/common';
 
@@ -15,8 +15,8 @@ const tabs = [
 	},
 	{
 		id: 'chat',
-		label: 'Чат с PDF',
-		icon: MessageSquare,
+		label: 'Чат с документом',
+		icon: MessageCircle,
 		href: '/dashboard?tab=chat',
 	},
 	{
