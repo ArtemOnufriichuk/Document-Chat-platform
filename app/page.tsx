@@ -1,20 +1,48 @@
-"use client"
+'use client';
 
-import { useEffect } from "react"
-import { useRouter } from "next/navigation"
-import { useAppStore } from "@/lib/store"
-import LoginPage from "@/components/login-page"
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { useAppStore } from '@/lib/store';
+import LoginPage from '@/components/login-page';
+import LoadingSpinner from '@/components/loading';
+import * as serverActions from '@/lib/server-actions';
 
 export default function Home() {
-  const router = useRouter()
-  const { currentUser } = useAppStore()
+	const router = useRouter();
+	const { currentUser, users } = useAppStore();
+	const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    if (currentUser) {
-      router.push("/dashboard")
-    }
-  }, [currentUser, router])
+	// Initialize users on first load only
+	useEffect(() => {
+		const initializeUsers = async () => {
+			try {
+				// Only fetch if data is empty
+				if (!users || users.length === 0) {
+					const usersData = await serverActions.getUsers();
+					useAppStore.setState({ users: usersData });
+				}
+			} catch (error) {
+				console.error('Error loading users:', error);
+			} finally {
+				setIsLoading(false);
+			}
+		};
 
-  return <LoginPage />
+		initializeUsers();
+
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []); // Empty dependency array since we only want to run this once
+
+	// Handle navigation on login
+	useEffect(() => {
+		if (currentUser) {
+			router.push('/dashboard');
+		}
+	}, [currentUser, router]);
+
+	if (isLoading) {
+		return <LoadingSpinner />;
+	}
+
+	return <LoginPage />;
 }
-

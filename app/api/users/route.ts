@@ -1,21 +1,46 @@
-import { NextResponse } from "next/server"
-import { readDB, updateDB } from "@/lib/db"
-import type { User } from "@/types"
+import { NextResponse } from 'next/server';
+import fs from 'fs';
+import path from 'path';
+import type { DB, User } from '@/types';
 
 export async function GET() {
-  const db = readDB()
-  return NextResponse.json(db.users)
+	try {
+		const DB_PATH = path.join(process.cwd(), 'database.json');
+		const data = fs.readFileSync(DB_PATH, 'utf-8');
+		const db: DB = JSON.parse(data);
+
+		return NextResponse.json(db.users || []);
+	} catch (error) {
+		console.error('Error getting users:', error);
+		return NextResponse.json({ error: 'Failed to get users' }, { status: 500 });
+	}
 }
 
 export async function POST(request: Request) {
-  const newUser: Omit<User, "id"> = await request.json()
+	try {
+		const user = await request.json();
+		const DB_PATH = path.join(process.cwd(), 'database.json');
+		const data = fs.readFileSync(DB_PATH, 'utf-8');
+		const db: DB = JSON.parse(data);
 
-  updateDB((db) => {
-    const id = Date.now().toString()
-    db.users.push({ ...newUser, id, createdAt: new Date().toISOString(), lastLogin: new Date().toISOString() })
-    return db
-  })
+		const newUser: User = {
+			id: Date.now().toString(),
+			login: user.login,
+			password: user.password,
+			isAdmin: user.isAdmin || false,
+			email: user.email,
+			fullName: user.fullName || '',
+			createdAt: new Date().toISOString(),
+			lastLogin: new Date().toISOString(),
+		};
 
-  return NextResponse.json({ message: "User created successfully" }, { status: 201 })
+		db.users = [...(db.users || []), newUser];
+
+		fs.writeFileSync(DB_PATH, JSON.stringify(db, null, 2));
+
+		return NextResponse.json(newUser);
+	} catch (error) {
+		console.error('Error adding user:', error);
+		return NextResponse.json({ error: 'Failed to add user' }, { status: 500 });
+	}
 }
-

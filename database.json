@@ -7,8 +7,8 @@
       "isAdmin": true,
       "email": "admin@example.com",
       "fullName": "Admin User",
-      "createdAt": "2023-01-01T00:00:00.000Z",
-      "lastLogin": "2023-01-01T00:00:00.000Z"
+      "createdAt": "2025-01-01T12:00:00.000Z",
+      "lastLogin": "2025-01-15T14:30:00.000Z"
     },
     {
       "id": "2",
@@ -17,83 +17,51 @@
       "isAdmin": false,
       "email": "user@example.com",
       "fullName": "Regular User",
-      "createdAt": "2023-01-01T00:00:00.000Z",
-      "lastLogin": "2023-01-01T00:00:00.000Z"
+      "createdAt": "2025-01-01T12:00:00.000Z",
+      "lastLogin": "2025-01-15T14:30:00.000Z"
+    },
+    {
+      "id": "1741551284598",
+      "login": "dev01@test.com",
+      "password": "Arnar.123",
+      "isAdmin": false,
+      "email": "dev01@test.com",
+      "fullName": "dev01@test.com",
+      "createdAt": "2025-03-09T20:14:44.598Z",
+      "lastLogin": "2025-03-09T20:14:44.599Z"
     }
   ],
   "documents": [
     {
       "id": "1",
-      "title": "Важный документ",
-      "url": "https://docs.google.com/document/d/1234567890/edit",
-      "createdAt": "2023-01-01T00:00:00.000Z",
-      "updatedAt": "2023-01-15T00:00:00.000Z",
-      "history": [
-        {
-          "changedBy": "1",
-          "changedAt": "2023-01-15T00:00:00.000Z",
-          "changes": "Updated content"
-        }
-      ]
+      "title": "Sample PDF Document",
+      "url": "https://www.africau.edu/images/default/sample.pdf",
+      "createdAt": "2025-01-01T12:00:00.000Z",
+      "updatedAt": "2025-01-15T14:30:00.000Z"
     },
     {
-      "id": "2",
-      "title": "Отчет за квартал",
-      "url": "https://docs.google.com/document/d/0987654321/edit",
-      "createdAt": "2023-02-01T00:00:00.000Z",
-      "updatedAt": "2023-02-28T00:00:00.000Z",
-      "history": [
-        {
-          "changedBy": "2",
-          "changedAt": "2023-02-28T00:00:00.000Z",
-          "changes": "Added financial data"
-        }
-      ]
+      "id": "1741541452103",
+      "title": "TEST",
+      "url": "https://drive.google.com/file/d/1qKs7YMSYqx2TZ0oZZvwfNaH_TZ32HguA/view?usp=sharing",
+      "createdAt": "2025-03-09T17:30:52.103Z",
+      "updatedAt": "2025-03-09T20:19:04.751Z"
+    },
+    {
+      "id": "1741594554831",
+      "title": "ыфв324",
+      "url": "https://drive.google.com/file/d/1qKs7YMSYqx2TZ0oZZvwfNaH_TZ32HguA/view?usp=sharing1",
+      "createdAt": "2025-03-10T08:15:54.831Z",
+      "updatedAt": "2025-03-10T08:18:40.816Z"
+    },
+    {
+      "id": "1741596285063",
+      "title": "asd",
+      "url": "https://docs.google.com/spreadsheets/d/1HobDQx5-J8lJ933HLRgGFSX5yPbN8gn-WVVddtvAehU/edit?usp=sharing",
+      "createdAt": "2025-03-10T08:44:45.063Z",
+      "updatedAt": "2025-03-10T09:04:07.981Z"
     }
   ],
-  "bonuses": [
-    {
-      "id": "1",
-      "name": "Welcome Bonus",
-      "description": "New user bonus",
-      "amount": 100,
-      "isUsed": false
-    },
-    {
-      "id": "2",
-      "name": "Referral Bonus",
-      "description": "Bonus for referring a friend",
-      "amount": 50,
-      "isUsed": false
-    }
-  ],
-  "affiliates": [
-    {
-      "id": "1",
-      "name": "John Doe",
-      "code": "JOHN2023",
-      "commission": 10
-    },
-    {
-      "id": "2",
-      "name": "Jane Smith",
-      "code": "JANE2023",
-      "commission": 15
-    }
-  ],
-  "reports": [
-    {
-      "id": "1",
-      "title": "Monthly Report",
-      "url": "https://example.com/report1",
-      "date": "2023-05-01"
-    },
-    {
-      "id": "2",
-      "title": "Quarterly Report",
-      "url": "https://example.com/report2",
-      "date": "2023-06-30"
-    }
-  ]
+  "settings": {
+    "theme": "dark"
+  }
 }
-
