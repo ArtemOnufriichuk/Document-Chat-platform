@@ -3,9 +3,9 @@
 import { Suspense, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAppStore } from '@/lib/store';
-import DashboardTabs from './dashboard-tabs';
 import { Loader2 } from 'lucide-react';
-import DashboardHeader from './dashboard-header';
+import DashboardHeader from './DashboardHeader';
+import DashboardTabs from './DashboardTabs';
 
 const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
 	const router = useRouter();

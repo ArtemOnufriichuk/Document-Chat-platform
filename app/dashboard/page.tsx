@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from 'react';
 import { useAppStore } from '@/lib/store';
-import DashboardContent from './dashboard-content';
-import LoadingSpinner from '@/components/loading';
+import DashboardContent from './DashboardContent';
+import LoadingSpinner from '@/components/Loading';
 import * as serverActions from '@/lib/server-actions';
 
 const DashboardPage = () => {

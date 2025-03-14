@@ -3,8 +3,8 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAppStore } from '@/lib/store';
-import LoginPage from '@/components/login-page';
-import LoadingSpinner from '@/components/loading';
+import LoginPage from '@/components/LoginPage';
+import LoadingSpinner from '@/components/Loading';
 import * as serverActions from '@/lib/server-actions';
 
 const Home = () => {

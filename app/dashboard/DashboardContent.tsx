@@ -3,14 +3,14 @@
 import { useEffect, lazy, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { useAppStore } from '@/lib/store';
-import LoadingSpinner from '@/components/loading';
+import LoadingSpinner from '@/components/Loading';
 
 // Lazy load components for better performance
-const DocumentList = lazy(() => import('@/components/document-list'));
-const AddDocumentForm = lazy(() => import('@/components/add-document-form'));
-const Chat = lazy(() => import('@/components/chat'));
-const UserManagement = lazy(() => import('@/components/user-management'));
-const Settings = lazy(() => import('@/components/settings'));
+const DocumentList = lazy(() => import('@/components/DocumentList'));
+const AddDocumentForm = lazy(() => import('@/components/AddDocumentForm'));
+const Chat = lazy(() => import('@/components/Chat'));
+const UserManagement = lazy(() => import('@/components/UserManagement'));
+const Settings = lazy(() => import('@/components/Settings'));
 
 const DashboardContent = () => {
 	const searchParams = useSearchParams();
