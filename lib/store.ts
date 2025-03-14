@@ -1,9 +1,6 @@
 import { create } from 'zustand';
 import type { User, Document, Settings } from '@/types';
 
-// Constants for consistent timestamps
-const CURRENT_UPDATE_TIME = '2025-01-15T14:30:00.000Z';
-
 interface AppStore {
 	// Auth
 	currentUser: User | null;
@@ -145,7 +142,7 @@ export const useAppStore = create<AppStore>((set, get) => ({
 		try {
 			// Optimistic update
 			set((state) => ({
-				documents: state.documents.map((doc) => (doc.id === id ? { ...doc, ...updatedDocument, updatedAt: CURRENT_UPDATE_TIME } : doc)),
+				documents: state.documents.map((doc) => (doc.id === id ? { ...doc, ...updatedDocument, updatedAt: new Date().toISOString() } : doc)),
 			}));
 
 			// Persist changes to the database
@@ -274,32 +271,32 @@ export const useAppStore = create<AppStore>((set, get) => ({
 }));
 
 // Initialize with hardcoded users if running in browser
-if (typeof window !== 'undefined') {
-	// Check if users are already initialized
-	const currentUsers = useAppStore.getState().users;
-	if (!currentUsers || currentUsers.length === 0) {
-		const hardcodedUsers = [
-			{
-				id: '1',
-				login: 'admin',
-				password: 'admin123',
-				isAdmin: true,
-				email: 'admin@example.com',
-				fullName: 'Admin User',
-				createdAt: '2023-01-01T00:00:00.000Z',
-				lastLogin: '2023-01-01T00:00:00.000Z',
-			},
-			{
-				id: '2',
-				login: 'user',
-				password: 'user123',
-				isAdmin: false,
-				email: 'user@example.com',
-				fullName: 'Regular User',
-				createdAt: '2023-01-01T00:00:00.000Z',
-				lastLogin: '2023-01-01T00:00:00.000Z',
-			},
-		];
-		useAppStore.setState({ users: hardcodedUsers });
-	}
-}
+// if (typeof window !== 'undefined') {
+// 	// Check if users are already initialized
+// 	const currentUsers = useAppStore.getState().users;
+// 	if (!currentUsers || currentUsers.length === 0) {
+// 		const hardcodedUsers = [
+// 			{
+// 				id: '1',
+// 				login: 'admin',
+// 				password: 'admin123',
+// 				isAdmin: true,
+// 				email: 'admin@example.com',
+// 				fullName: 'Admin User',
+// 				createdAt: '2023-01-01T00:00:00.000Z',
+// 				lastLogin: '2023-01-01T00:00:00.000Z',
+// 			},
+// 			{
+// 				id: '2',
+// 				login: 'user',
+// 				password: 'user123',
+// 				isAdmin: false,
+// 				email: 'user@example.com',
+// 				fullName: 'Regular User',
+// 				createdAt: '2023-01-01T00:00:00.000Z',
+// 				lastLogin: '2023-01-01T00:00:00.000Z',
+// 			},
+// 		];
+// 		useAppStore.setState({ users: hardcodedUsers });
+// 	}
+// }

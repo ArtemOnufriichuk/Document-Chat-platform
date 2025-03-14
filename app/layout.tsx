@@ -3,7 +3,8 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
-import { Toaster } from '@/components/ui/toaster';
+// import { Toaster } from '@/components/ui/toaster';
+import './globals.css';
 
 const inter = Inter({ subsets: ['latin', 'cyrillic'] });
 
@@ -25,11 +26,9 @@ export default function RootLayout({
 			<body className={inter.className}>
 				<ThemeProvider defaultTheme='dark'>
 					{children}
-					<Toaster />
+					{/* <Toaster /> */}
 				</ThemeProvider>
 			</body>
 		</html>
 	);
 }
-
-import './globals.css';
