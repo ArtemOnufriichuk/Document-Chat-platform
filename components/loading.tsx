@@ -8,7 +8,7 @@ interface LoadingSpinnerProps {
 	fullScreen?: boolean;
 }
 
-export default function LoadingSpinner({ text = 'Загрузка...', size = 'medium', fullScreen = false }: LoadingSpinnerProps) {
+const LoadingSpinner = ({ text = 'Загрузка...', size = 'medium', fullScreen = false }: LoadingSpinnerProps) => {
 	const sizeMap = {
 		small: 'h-4 w-4',
 		medium: 'h-8 w-8',
@@ -27,4 +27,6 @@ export default function LoadingSpinner({ text = 'Загрузка...', size = 'm
 			</div>
 		</div>
 	);
-}
+};
+
+export default LoadingSpinner;

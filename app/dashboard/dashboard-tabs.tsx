@@ -34,7 +34,7 @@ const tabs = [
 	},
 ];
 
-export default function DashboardTabs() {
+const DashboardTabs = () => {
 	const searchParams = useSearchParams();
 	const activeTab = searchParams.get('tab') || 'documents';
 	const { currentUser } = useAppStore();
@@ -61,4 +61,6 @@ export default function DashboardTabs() {
 			</div>
 		</div>
 	);
-}
+};
+
+export default DashboardTabs;

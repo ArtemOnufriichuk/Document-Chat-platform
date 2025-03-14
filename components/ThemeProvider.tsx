@@ -24,7 +24,7 @@ const initialState: ThemeProviderState = {
 
 const ThemeProviderContext = createContext<ThemeProviderState>(initialState);
 
-function ThemeProvider({ children, defaultTheme = 'dark', ...props }: ThemeProviderProps) {
+const ThemeProvider = ({ children, defaultTheme = 'dark', ...props }: ThemeProviderProps) => {
 	const { settings } = useAppStore();
 	const [theme, setTheme] = useState<Theme>(defaultTheme);
 
@@ -64,7 +64,7 @@ function ThemeProvider({ children, defaultTheme = 'dark', ...props }: ThemeProvi
 			{children}
 		</ThemeProviderContext.Provider>
 	);
-}
+};
 
 export const useTheme = () => {
 	const context = useContext(ThemeProviderContext);

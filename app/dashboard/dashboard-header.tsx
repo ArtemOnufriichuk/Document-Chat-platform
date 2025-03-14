@@ -7,7 +7,7 @@ import { LogOut, User as UserIcon, Loader2, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { User } from '@/types';
 
-export default function DashboardHeader({ currentUser }: { currentUser: User }) {
+const DashboardHeader = ({ currentUser }: { currentUser: User }) => {
 	const router = useRouter();
 	const { logout } = useAppStore();
 	const [isLoggingOut, setIsLoggingOut] = useState(false);
@@ -32,15 +32,21 @@ export default function DashboardHeader({ currentUser }: { currentUser: User }) 
 				<div className='flex items-center gap-4'>
 					<div className='flex items-center gap-2'>
 						<UserIcon className='h-4 w-4' />
+
 						<span className='text-sm font-medium'>{currentUser.fullName || currentUser.login}</span>
+
 						{currentUser.isAdmin && <span className='ml-1 rounded-full bg-primary/10 px-2 py-0.5 text-xs font-medium text-primary'>Admin</span>}
 					</div>
+
 					<Button variant='ghost' size='sm' onClick={handleLogout} disabled={isLoggingOut}>
-						{isLoggingOut ? <Loader2 className='h-4 w-4 mr-2 animate-spin' /> : <LogOut className='h-4 w-4 mr-2' />}
+						{isLoggingOut && <Loader2 className='h-4 w-4 mr-2 animate-spin' />}
+						{!isLoggingOut && <LogOut className='h-4 w-4 mr-2' />}
 						Выйти
 					</Button>
 				</div>
 			</div>
 		</header>
 	);
-}
+};
+
+export default DashboardHeader;

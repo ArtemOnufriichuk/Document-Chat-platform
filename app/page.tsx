@@ -7,7 +7,7 @@ import LoginPage from '@/components/login-page';
 import LoadingSpinner from '@/components/loading';
 import * as serverActions from '@/lib/server-actions';
 
-export default function Home() {
+const Home = () => {
 	const router = useRouter();
 	const { currentUser, users } = useAppStore();
 	const [isLoading, setIsLoading] = useState(true);
@@ -43,4 +43,6 @@ export default function Home() {
 	}
 
 	return <LoginPage />;
-}
+};
+
+export default Home;

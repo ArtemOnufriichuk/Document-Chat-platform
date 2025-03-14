@@ -12,7 +12,7 @@ const Chat = lazy(() => import('@/components/chat'));
 const UserManagement = lazy(() => import('@/components/user-management'));
 const Settings = lazy(() => import('@/components/settings'));
 
-export default function DashboardContent() {
+const DashboardContent = () => {
 	const searchParams = useSearchParams();
 	const { currentUser, documents, fetchDocuments } = useAppStore();
 
@@ -94,4 +94,6 @@ export default function DashboardContent() {
 	};
 
 	return <div className='container py-6'>{renderContent()}</div>;
-}
+};
+
+export default DashboardContent;

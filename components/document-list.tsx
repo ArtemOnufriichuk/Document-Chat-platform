@@ -18,7 +18,7 @@ interface PreviewDocument extends Document {
 	content?: string;
 }
 
-export default function DocumentList() {
+const DocumentList = () => {
 	const documents = useAppStore((state) => state.documents);
 	const removeDocument = useAppStore((state) => state.removeDocument);
 	const updateDocument = useAppStore((state) => state.updateDocument);
@@ -276,4 +276,6 @@ export default function DocumentList() {
 			</CardContent>
 		</Card>
 	);
-}
+};
+
+export default DocumentList;

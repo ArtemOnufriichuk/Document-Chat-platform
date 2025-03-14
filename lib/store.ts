@@ -269,34 +269,3 @@ export const useAppStore = create<AppStore>((set, get) => ({
 		set({ searchTerm: term });
 	},
 }));
-
-// Initialize with hardcoded users if running in browser
-// if (typeof window !== 'undefined') {
-// 	// Check if users are already initialized
-// 	const currentUsers = useAppStore.getState().users;
-// 	if (!currentUsers || currentUsers.length === 0) {
-// 		const hardcodedUsers = [
-// 			{
-// 				id: '1',
-// 				login: 'admin',
-// 				password: 'admin123',
-// 				isAdmin: true,
-// 				email: 'admin@example.com',
-// 				fullName: 'Admin User',
-// 				createdAt: '2023-01-01T00:00:00.000Z',
-// 				lastLogin: '2023-01-01T00:00:00.000Z',
-// 			},
-// 			{
-// 				id: '2',
-// 				login: 'user',
-// 				password: 'user123',
-// 				isAdmin: false,
-// 				email: 'user@example.com',
-// 				fullName: 'Regular User',
-// 				createdAt: '2023-01-01T00:00:00.000Z',
-// 				lastLogin: '2023-01-01T00:00:00.000Z',
-// 			},
-// 		];
-// 		useAppStore.setState({ users: hardcodedUsers });
-// 	}
-// }

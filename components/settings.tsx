@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 
-export default function Settings() {
+const Settings = () => {
 	const { theme, setTheme } = useTheme();
 
 	const handleThemeChange = (value: string) => {
@@ -35,4 +35,6 @@ export default function Settings() {
 			</CardContent>
 		</Card>
 	);
-}
+};
+
+export default Settings;

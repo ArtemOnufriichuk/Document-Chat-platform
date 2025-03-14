@@ -14,7 +14,7 @@ import { useToast } from '@/hooks/use-toast';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from '@/components/ui/dialog';
 
-export default function UserManagement() {
+const UserManagement = () => {
 	const { users = [], addUser, updateUser, deleteUser, changeUserPermissions, currentUser } = useAppStore();
 	const { toast } = useToast();
 	const [newUser, setNewUser] = useState({
@@ -289,4 +289,6 @@ export default function UserManagement() {
 			</Dialog>
 		</>
 	);
-}
+};
+
+export default UserManagement;

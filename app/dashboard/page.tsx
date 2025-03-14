@@ -6,7 +6,7 @@ import DashboardContent from './dashboard-content';
 import LoadingSpinner from '@/components/loading';
 import * as serverActions from '@/lib/server-actions';
 
-export default function DashboardPage() {
+const DashboardPage = () => {
 	const [isLoading, setIsLoading] = useState(true);
 
 	// Initialize store with data from server only once
@@ -33,4 +33,6 @@ export default function DashboardPage() {
 	}
 
 	return <DashboardContent />;
-}
+};
+
+export default DashboardPage;

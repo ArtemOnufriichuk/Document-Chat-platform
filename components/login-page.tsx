@@ -11,7 +11,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Label } from '@/components/ui/label';
 import { Loader2 } from 'lucide-react';
 
-export default function LoginPage() {
+const LoginPage = () => {
 	const router = useRouter();
 	const { login } = useAppStore();
 	const [username, setUsername] = useState('admin');
@@ -92,4 +92,6 @@ export default function LoginPage() {
 			</Card>
 		</div>
 	);
-}
+};
+
+export default LoginPage;

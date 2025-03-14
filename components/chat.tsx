@@ -37,12 +37,12 @@ interface ApiMessage {
 }
 
 // Convert our UI chat messages to the format expected by the API
-function convertToApiMessages(messages: ChatMessage[]): ApiMessage[] {
+const convertToApiMessages = (messages: ChatMessage[]): ApiMessage[] => {
 	return messages.map((msg) => ({
 		role: msg.role,
 		content: msg.content,
 	}));
-}
+};
 
 // Memo component for message rendering to prevent unnecessary rerenders
 const ChatMessageItem = React.memo(
@@ -67,7 +67,7 @@ const ChatMessageItem = React.memo(
 
 ChatMessageItem.displayName = 'ChatMessageItem';
 
-export default function Chat() {
+const Chat = () => {
 	const [message, setMessage] = useState('');
 	const [chatHistory, setChatHistory] = useState<ChatMessage[]>([]);
 	const [isLoading, setIsLoading] = useState(false);
@@ -378,4 +378,6 @@ export default function Chat() {
 			</CardFooter>
 		</Card>
 	);
-}
+};
+
+export default Chat;

@@ -25,7 +25,7 @@ const defaultDB: DB = {
 	},
 };
 
-async function readDB(): Promise<DB> {
+const readDB = async (): Promise<DB> => {
 	try {
 		// Check if database file exists
 		if (!fs.existsSync(DB_PATH)) {
@@ -42,33 +42,33 @@ async function readDB(): Promise<DB> {
 		// Return default data if there's an error
 		return defaultDB;
 	}
-}
+};
 
-export async function getUsers(): Promise<User[]> {
+export const getUsers = async (): Promise<User[]> => {
 	const db = await readDB();
 	return db.users || [];
-}
+};
 
-export async function getDocuments(): Promise<Document[]> {
+export const getDocuments = async (): Promise<Document[]> => {
 	const db = await readDB();
 	return db.documents || [];
-}
+};
 
-export async function getSettings(): Promise<Settings> {
+export const getSettings = async (): Promise<Settings> => {
 	const db = await readDB();
 	return db.settings || {};
-}
+};
 
-export async function writeDB(db: DB): Promise<void> {
+export const writeDB = async (db: DB): Promise<void> => {
 	try {
 		fs.writeFileSync(DB_PATH, JSON.stringify(db, null, 2));
 	} catch (error) {
 		console.error('Error writing to database:', error);
 	}
-}
+};
 
-export async function updateDB(updater: (db: DB) => DB): Promise<void> {
+export const updateDB = async (updater: (db: DB) => DB): Promise<void> => {
 	const db = await readDB();
 	const updatedDB = updater(db);
 	await writeDB(updatedDB);
-}
+};

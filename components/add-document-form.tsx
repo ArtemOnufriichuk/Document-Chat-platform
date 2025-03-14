@@ -14,7 +14,7 @@ import { toast } from 'sonner';
 /**
  * Check if the URL is for a supported document type
  */
-function isSupportedDocumentUrl(url: string): { isValid: boolean; message?: string } {
+const isSupportedDocumentUrl = (url: string): { isValid: boolean; message?: string } => {
 	// Google Drive document formats
 	if (
 		url.includes('drive.google.com/file/d/') ||
@@ -30,9 +30,9 @@ function isSupportedDocumentUrl(url: string): { isValid: boolean; message?: stri
 		isValid: true,
 		message: 'URL допустим, но формат может не поддерживаться. Рекомендуется использовать PDF Google Drive документы.',
 	};
-}
+};
 
-export default function AddDocumentForm() {
+const AddDocumentForm = () => {
 	const { addDocument, documents, fetchDocuments } = useAppStore();
 
 	// Form states
@@ -167,4 +167,6 @@ export default function AddDocumentForm() {
 			</CardFooter>
 		</Card>
 	);
-}
+};
+
+export default AddDocumentForm;

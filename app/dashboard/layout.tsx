@@ -7,7 +7,7 @@ import DashboardTabs from './dashboard-tabs';
 import { Loader2 } from 'lucide-react';
 import DashboardHeader from './dashboard-header';
 
-export default function DashboardLayout({ children }: { children: React.ReactNode }) {
+const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
 	const router = useRouter();
 	const { currentUser } = useAppStore();
 
@@ -39,4 +39,6 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 			</main>
 		</div>
 	);
-}
+};
+
+export default DashboardLayout;
