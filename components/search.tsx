@@ -32,9 +32,7 @@ const Search = () => {
 		searchDocuments(debouncedTerm);
 	}, [debouncedTerm, searchDocuments]);
 
-	/**
-	 * Handle form submission
-	 */
+	// Handle form submission
 	const handleSearch = useCallback(
 		(e: React.FormEvent) => {
 			e.preventDefault();
@@ -43,9 +41,7 @@ const Search = () => {
 		[searchTerm, searchDocuments],
 	);
 
-	/**
-	 * Clear search input and results
-	 */
+	// Clear search input and results
 	const clearSearch = useCallback(() => {
 		setSearchTerm('');
 		searchDocuments('');
