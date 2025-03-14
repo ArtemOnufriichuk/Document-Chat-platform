@@ -8,7 +8,7 @@ import LoadingSpinner from '@/components/Loading';
 // Lazy load components for better performance
 const DocumentList = lazy(() => import('@/components/DocumentList'));
 const AddDocumentForm = lazy(() => import('@/components/AddDocumentForm'));
-const Chat = lazy(() => import('@/components/Chat'));
+const Chat = lazy(() => import('@/components/Сhat'));
 const UserManagement = lazy(() => import('@/components/UserManagement'));
 const Settings = lazy(() => import('@/components/Settings'));
 
