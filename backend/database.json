@@ -1,0 +1,18 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "login": "admin",
+      "password": "$2b$10$w1vpdoGMhUyHHTIaDa5D0ucZ0DvG1xUNfo14WSBSCgCH0wmgJ/gsG",
+      "isAdmin": true,
+      "email": "admin@example.com",
+      "fullName": "Admin User",
+      "createdAt": "2025-05-11T03:29:48.954Z",
+      "lastLogin": "2025-05-11T03:38:51.946Z"
+    }
+  ],
+  "documents": [],
+  "settings": {
+    "theme": "dark"
+  }
+}

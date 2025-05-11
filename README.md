@@ -1,60 +1,91 @@
-# Document Chat with PDF Support
+# Document Chat
 
-This application enables users to chat with PDF documents from various sources. It analyzes document content using Anthropic's Claude AI model to answer questions about the documents.
+Приложение для работы с документами и чата с ними. Использует API Claude от Anthropic для анализа PDF документов и ответов на вопросы.
 
-## Features
+## Особенности
 
-- **Universal PDF Support**: Works with PDFs from any publicly accessible URL
-- **Chat Interface**: Interactive chat interface to ask questions about your documents
-- **Document Management**: Add, view, and manage your documents 
-- **Authentication**: Simple user authentication system with admin privileges
-- **Responsive Design**: Works on desktop and mobile devices
+- **Поддержка PDF**: Работает с PDF документами из любого публично доступного URL
+- **Чат-интерфейс**: Интерактивный интерфейс чата для вопросов по документам
+- **Управление документами**: Добавление, просмотр и управление документами
+- **Аутентификация**: Простая система аутентификации пользователей с правами администратора
+- **Адаптивный дизайн**: Работает на десктопах и мобильных устройствах
 
-## Getting Started
+## Структура проекта
 
-### Prerequisites
+Проект разделен на две части:
 
-- Node.js (v18 or newer)
-- NPM or Yarn
-- Claude API key from Anthropic
+- **frontend/** - клиентская часть на React + Vite
+- **backend/** - серверная часть на Node.js + Express
 
-### Installation
+## Требования
 
-1. Clone the repository
-2. Install dependencies:
+- Node.js 18 или выше
+- API ключ Claude от Anthropic
+
+## Установка
+
+1. Клонировать репозиторий:
+   ```bash
+   git clone https://github.com/yourusername/document-chat.git
+   cd document-chat
+   ```
+
+2. Установить зависимости для корневого проекта, frontend и backend:
    ```bash
    npm install
+   cd frontend && npm install
+   cd ../backend && npm install
    ```
-3. Create a `.env.local` file with your Claude API key:
+
+3. Создать файл `.env` в директории `backend` со следующим содержимым:
    ```
-   CLAUDE_API_KEY=your_api_key_here
+   PORT=3001
+   CLAUDE_API_KEY=your_claude_api_key
    CLAUDE_MODEL=claude-3-haiku-20240307
    ```
-4. Start the development server:
-   ```bash
-   npm run dev
-   ```
 
-## Usage
+## Запуск в режиме разработки
 
-1. **Login**: Use the default credentials (admin/admin123) to log in
-2. **Add Documents**: Navigate to the Documents tab and add PDF documents by URL
-   - Ensure the documents are publicly accessible
-3. **Chat with Documents**: Go to the Chat tab, select documents, and ask questions
+Запустить одновременно frontend и backend:
+```bash
+npm run dev
+```
 
-## Adding Documents
+Или запустить отдельно:
+```bash
+# Frontend (порт 3000)
+npm run dev:frontend
 
-1. Find a PDF document with a public URL
-2. Copy the URL
-3. Paste the URL in the "Add Document" form with a descriptive title
+# Backend (порт 3001)
+npm run dev:backend
+```
 
-## Technology Stack
+## Сборка для продакшена
 
-- **Frontend**: Next.js, React, Tailwind CSS, shadcn/ui
-- **PDF Processing**: PDF.js
+```bash
+npm run build
+```
+
+## Запуск в продакшене
+
+```bash
+npm run start
+```
+
+## Использование
+
+1. **Вход**: Используйте стандартные учетные данные (admin/admin123) для входа
+2. **Добавление документов**: Перейдите на вкладку Documents и добавьте PDF документы по URL
+   - Убедитесь, что документы публично доступны
+3. **Чат с документами**: Перейдите на вкладку Chat, выберите документы и задавайте вопросы
+
+## Технологический стек
+
+- **Frontend**: React, Vite, Tailwind CSS
+- **Backend**: Node.js, Express
 - **AI**: Anthropic Claude API
-- **State Management**: Zustand
+- **Управление состоянием**: Zustand
 
-## License
+## Лицензия
 
-This project is licensed under the MIT License
+Этот проект лицензирован под MIT License
